@@ -1,0 +1,53 @@
+# Node modules
+node_modules/
+
+# Environment files
+.env
+.env.*
+.env.local
+
+# Build / output
+dist/
+build/
+
+# Logs
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS files
+.DS_Store
+
+# Coverage
+coverage/
+
+# IDEs
+.vscode/
+.idea/
+```// filepath: /Users/harrisonjones/Desktop/entertainment-app-node-js/.gitignore
+# Node modules
+node_modules/
+
+# Environment files
+.env
+.env.*
+.env.local
+
+# Build / output
+dist/
+build/
+
+# Logs
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS files
+.DS_Store
+
+# Coverage
+coverage/
+
+# IDEs
+.vscode/
+.idea/

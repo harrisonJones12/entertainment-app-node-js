@@ -1,15 +1,25 @@
-const express = require("express");
-const app = express();
-const userRoutes = require("./routes/index");
+import express from "express";
+import cors from "cors";
+import cookieParser from "cookie-parser";
 
-const PORT = process.env.PORT || 3000;
+import { PORT } from "./config/index.js";
+import Router from "./routes/index.js";
+import connectToDB from "./db/db.js";
 
-// Middleware to parse JSON body
-app.use(express.json());
+const server = express();
 
-// Use the userRoutes for user-related routes
-app.use("/watchfun", userRoutes);
+const Port = PORT || 3000;
 
-app.listen(3000, () => {
-  console.log("Server is running on port 3000");
+// CONFIGURE HEADER INFORMATION
+server.use(cors());
+server.disable("x-powered-by"); //Reduce fingerprinting
+server.use(cookieParser());
+server.use(express.urlencoded({ extended: false }));
+server.use(express.json());
+
+connectToDB();
+Router(server);
+
+server.listen(Port || 3000, () => {
+  console.log(`Server is running on port ${Port}`);
 });
